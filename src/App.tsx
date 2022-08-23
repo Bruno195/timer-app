@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
+import { CyclesContextProvider } from './contexts/CyclesContext'
 import { GlobalStyles } from './styles/global'
 import Router from './Router'
 import { ThemeProvider } from 'styled-components'
@@ -8,7 +9,9 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyles />
       <BrowserRouter>
-        <Router />
+        <CyclesContextProvider>
+          <Router />
+        </CyclesContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   )
